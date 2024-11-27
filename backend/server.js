@@ -28,10 +28,14 @@ const {
 app.use(express.json());
 app.use("/uploads", express.static(__dirname + "/uploads"));
 app.use(cookeParser());
-app.use(cors({
-    credentials: true,
-    origin: 'https://fullstack-mern-clone-airbnb-frontend.vercel.app/'
-}));
+app.use(
+    cors({
+        origin: 'https://fullstack-mern-clone-airbnb-frontend.vercel.app',
+        credentials: true,
+        methods: ['GET', 'POST', 'PUT', 'DELETE'], //
+        allowedHeaders: ['Content-Type', 'Authorization', 'x-requested-with'],
+    })
+);
 
 mongoose.connect(MDB_URI).then(() => console.log("Pinged MongoDB, Successfully connected. ✅")).catch(err => {
     console.error("MongoDB connection failed ❌", err);
