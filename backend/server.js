@@ -30,7 +30,7 @@ app.use("/uploads", express.static(__dirname + "/uploads"));
 app.use(cookeParser());
 app.use(cors({
     credentials: true,
-    origin: "http://localhost:5173"
+    origin: 'https://fullstack-mern-clone-airbnb-frontend.vercel.app/'
 }));
 
 mongoose.connect(MDB_URI).then(() => console.log("Pinged MongoDB, Successfully connected. ✅")).catch(err => {

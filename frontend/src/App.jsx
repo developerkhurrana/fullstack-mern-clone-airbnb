@@ -14,7 +14,7 @@ import PlacesFormPage from "./Pages/PlacesFormPage";
 import PlacePage from "./Pages/PlacePage";
 import BookingPage from "./Pages/BookingPage";
 
-axios.defaults.baseURL = "http://localhost:4000";
+axios.defaults.baseURL = "https://fullstack-mern-clone-airbnb.vercel.app/";
 axios.defaults.withCredentials = true;
 
 function App() {
