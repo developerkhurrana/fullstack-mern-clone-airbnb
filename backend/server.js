@@ -32,10 +32,11 @@ app.use(
     cors({
         origin: 'https://fullstack-mern-clone-airbnb-frontend.vercel.app',
         credentials: true,
-        methods: ['GET', 'POST', 'PUT', 'DELETE'], //
+        methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
         allowedHeaders: ['Content-Type', 'Authorization', 'x-requested-with'],
     })
 );
+app.options('*', cors());
 
 mongoose.connect(MDB_URI).then(() => console.log("Pinged MongoDB, Successfully connected. ✅")).catch(err => {
     console.error("MongoDB connection failed ❌", err);
